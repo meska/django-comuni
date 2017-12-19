@@ -84,4 +84,40 @@ class Migration(migrations.Migration):
             name='ripartizione',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='comuni.RipartizioneGeografica'),
         ),
+        migrations.AlterModelOptions(
+            name='comune',
+            options={'ordering': ('nome',), 'verbose_name': 'Comune', 'verbose_name_plural': 'Comuni'},
+        ),
+        migrations.AlterModelOptions(
+            name='provincia',
+            options={'ordering': ('nome',), 'verbose_name': 'Provincia', 'verbose_name_plural': 'Province'},
+        ),
+        migrations.AlterModelOptions(
+            name='regione',
+            options={'ordering': ('nome',), 'verbose_name': 'Regione', 'verbose_name_plural': 'Regioni'},
+        ),
+        migrations.AlterModelOptions(
+            name='ripartizionegeografica',
+            options={'ordering': ('nome',), 'verbose_name': 'Ripartizione', 'verbose_name_plural': 'Ripartizioni'},
+        ),
+        migrations.AlterField(
+            model_name='comune',
+            name='nome',
+            field=models.CharField(db_index=True, max_length=100),
+        ),
+        migrations.AlterField(
+            model_name='provincia',
+            name='nome',
+            field=models.CharField(db_index=True, max_length=50),
+        ),
+        migrations.AlterField(
+            model_name='regione',
+            name='nome',
+            field=models.CharField(db_index=True, max_length=100),
+        ),
+        migrations.AlterField(
+            model_name='ripartizionegeografica',
+            name='nome',
+            field=models.CharField(db_index=True, max_length=100),
+        ),
     ]

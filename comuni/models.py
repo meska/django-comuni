@@ -10,6 +10,7 @@ class Regione(models.Model):
         return self.nome
 
     class Meta:
+        ordering = ('nome',)
         verbose_name = "Regione"
         verbose_name_plural = "Regioni"
 
@@ -22,6 +23,7 @@ class RipartizioneGeografica(models.Model):
         return self.nome
 
     class Meta:
+        ordering = ('nome',)
         verbose_name = "Ripartizione"
         verbose_name_plural = "Ripartizioni"
 
@@ -37,6 +39,7 @@ class Provincia(models.Model):
         return self.nome
 
     class Meta:
+        ordering = ('nome',)
         verbose_name = "Provincia"
         verbose_name_plural = "Province"
 
@@ -55,5 +58,6 @@ class Comune(models.Model):
         return self.nome
 
     class Meta:
+        ordering = ('nome',)
         verbose_name = "Comune"
         verbose_name_plural = "Comuni"
