@@ -18,5 +18,10 @@ setup(
     description='Tabelle Comuni Italiani per Django',
     packages=['comuni'],
     package_dir={'comuni': 'comuni'},
-    package_data={'comuni': ['migrations/fixtures/*.*']}
+    package_data={
+        'comuni': [
+            'migrations/*.*',
+            'migrations/fixtures/*.*'
+        ]}
+
 )
