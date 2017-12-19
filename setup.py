@@ -9,7 +9,7 @@ if sys.version_info < (3, 6):
 
 setup(
     name='django-comuni',
-    version='0.2',
+    version='0.2.1',
     install_requires=requirements,
     url='https://gitlab.com/meska/django-comuni',
     license='MIT',
