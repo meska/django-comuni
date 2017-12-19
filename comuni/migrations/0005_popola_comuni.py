@@ -27,13 +27,14 @@ def forwards_func(apps, schema_editor):
                     codice_catastale=row[18],
                     nome=row[5],
                     nome_de=row[6],
-                    capoluogo=True if row[12] == '0' else False,
+                    capoluogo=True if row[12] == '1' else False,
                 )
                 if created:
                     print(f"Inserito {row[5]}")
 
         # aggiorno sigla per nuova provincia Sud Sardegna
         province.objects.filter(nome='Sud Sardegna').update(sigla='SU')
+
 
 # noinspection PyUnusedLocal
 def reverse_func(apps, schema_editor):
