@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import PROTECT
 
 
 class Regione(models.Model):
@@ -33,7 +34,7 @@ class Provincia(models.Model):
     sigla = models.CharField(max_length=5)
     nome = models.CharField(max_length=50, db_index=True)
     nome_de = models.CharField(max_length=50, null=True, blank=True)
-    regione = models.ForeignKey(Regione)
+    regione = models.ForeignKey(Regione, on_delete=PROTECT)
 
     def __str__(self):
         return self.nome
@@ -46,7 +47,7 @@ class Provincia(models.Model):
 
 class Comune(models.Model):
     provincia = models.ForeignKey(Provincia)
-    ripartizione = models.ForeignKey(RipartizioneGeografica)
+    ripartizione = models.ForeignKey(RipartizioneGeografica, on_delete=PROTECT)
     codice_istat = models.CharField(max_length=10)
     codice_catastale = models.CharField(max_length=10)
     nome = models.CharField(max_length=100, db_index=True)
